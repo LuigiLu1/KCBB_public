@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kniffelclub Beider Basel</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .bg-dark-green { background-color: #1a3a1a; }
+    .text-dark-green { color: #1a3a1a; }
+    .hover\:bg-light-green:hover { background-color: #2d5a2d; }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navigation -->
+  <nav class="bg-dark-green text-white shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <span class="text-xl font-bold">KCBB</span>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="px-3 py-2 rounded hover:bg-light-green">Home</a>
+        <a href="wanderungen.html" class="px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+        <a href="statuten.html" class="px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+        <a href="rekorde.html" class="px-3 py-2 rounded hover:bg-light-green font-medium">Rekorde</a>
+      </div>
+      <button class="md:hidden focus:outline-none" id="menu-toggle">
+        <i data-feather="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <div class="md:hidden hidden mt-2" id="mobile-menu">
+      <a href="index.html" class="block px-3 py-2 rounded hover:bg-light-green">Home</a>
+      <a href="wanderungen.html" class="block px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+      <a href="statuten.html" class="block px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+      <a href="rekorde.html" class="block px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-dark-green text-white py-16 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down">
+      Rekorde des Kniffelclubs beider Basel
+    </h1>
+    <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Die besten Kniffel-Ergebnisse in der Geschichte unseres Clubs.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+      <a href="index.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">Home</a>
+      <a href="wanderungen.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">Wanderungen</a>
+      <a href="statuten.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">Statuten</a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-bold text-dark-green mb-6">Top 10 Rekorde</h2>
+
+<!-- Filter Container -->
+<div class="flex flex-wrap gap-4 mb-6">
+  <!-- Jahresfilter -->
+  <div class="flex-1 min-w-[150px]">
+    <label for="yearFilter" class="block mb-2 font-medium text-gray-700">Filter nach Jahr:</label>
+    <select id="yearFilter" class="border p-2 rounded w-full">
+      <option value="all">Alle Jahre</option>
+    </select>
+  </div>
+
+  <!-- Namensfilter -->
+  <div class="flex-1 min-w-[150px]">
+    <label for="nameFilter" class="block mb-2 font-medium text-gray-700">Filter nach Spieler/in:</label>
+    <select id="nameFilter" class="border p-2 rounded w-full">
+      <option value="all">Alle Spieler</option>
+    </select>
+  </div>
+</div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-dark-green text-white">
+              <th class="p-2 text-left">Datum</th>
+              <th class="p-2 text-left">Name</th>
+              <th class="p-2 text-right">Punkte</th>
+              <th class="p-2 text-right">Kniffel</th>
+            </tr>
+          </thead>
+          <tbody id="rekordeTable" class="divide-y divide-gray-200"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div id="stats" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6"></div>
+
+    <!-- Chart -->
+    <div class="bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold mb-3 text-dark-green">Verlauf (Punkte & Kniffel)</h3>
+      <canvas id="rekordeChart" height="140"></canvas>
+    </div>
+
+    <div class="mt-6 text-center">
+      <a href="eingabe.html" class="bg-dark-green border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Neue Punkte eintragen
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-green text-white py-8 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <span class="font-bold">Kniffelclub beider Basel</span>
+        <p class="text-sm mt-2">Tradition seit 2022</p>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-gray-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
+        <a href="#" class="hover:text-gray-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
+        <a href="#" class="hover:text-gray-300"><i data-feather="mail" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center">
+      <p>Kniffelclub beider Basel <script>document.write(/\d{4}/.exec(Date())[0])</script>. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+<script>
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.getElementById("mobile-menu").classList.toggle("hidden");
+});
+AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+feather.replace();
+
+const table = document.getElementById("rekordeTable");
+const yearFilter = document.getElementById("yearFilter");
+const nameFilter = document.getElementById("nameFilter");
+const statsDiv = document.getElementById("stats");
+const ctx = document.getElementById("rekordeChart").getContext("2d");
+let allData = [];
+let chartInstance = null;
+
+function parseDateDMY(s) {
+  const parts = s.split(".");
+  if (parts.length !== 3) return null;
+  return new Date(parts[2], parts[1] - 1, parts[0]);
+}
+
+function render() {
+  const year = yearFilter.value;
+  const name = nameFilter.value;
+  let filtered = allData.filter(r => r.Datum);
+  if (year !== "all") filtered = filtered.filter(r => r.Datum.endsWith(year));
+  if (name !== "all") filtered = filtered.filter(r => r.Name === name);
+
+  // Tabelle nur Top 10
+  const top10 = [...filtered].sort((a,b)=>b.Punkte-a.Punkte).slice(0,10);
+  table.innerHTML = top10.map(r=>`
+    <tr class="hover:bg-gray-100">
+      <td class="p-2">${r.Datum}</td>
+      <td class="p-2">${r.Name}</td>
+      <td class="p-2 text-right">${r.Punkte}</td>
+      <td class="p-2 text-right">${r.Kniffel}</td>
+    </tr>`).join("");
+
+  if (filtered.length === 0) {
+    statsDiv.innerHTML = `<div class="col-span-1 text-gray-600">Keine Daten</div>`;
+    if(chartInstance) chartInstance.destroy();
+    return;
+  }
+
+  // Statistik
+  const best = filtered.reduce((a,b)=>a.Punkte>=b.Punkte?a:b);
+  const worst = filtered.reduce((a,b)=>a.Punkte<=b.Punkte?a:b);
+  const avg = Math.round(filtered.reduce((s,x)=>s+x.Punkte,0)/filtered.length);
+  const kniffelAvg = (filtered.reduce((s,x)=>s+x.Kniffel,0)/filtered.length).toFixed(2);
+
+  statsDiv.innerHTML = `
+    <div class="bg-green-50 rounded-lg p-4 shadow text-center">
+      <div class="text-sm text-green-800 font-semibold">Bestes Spiel</div>
+      <div class="text-2xl font-bold text-green-900">${best.Punkte}</div>
+      <div class="text-sm mt-1">${best.Name} — ${best.Datum}</div>
+      <div class="text-sm mt-1">🎲 ${best.Kniffel} Kniffel</div>
+    </div>
+    <div class="bg-red-50 rounded-lg p-4 shadow text-center">
+      <div class="text-sm text-red-800 font-semibold">Schlechtestes Spiel</div>
+      <div class="text-2xl font-bold text-red-900">${worst.Punkte}</div>
+      <div class="text-sm mt-1">${worst.Name} — ${worst.Datum}</div>
+      <div class="text-sm mt-1">🎲 ${worst.Kniffel} Kniffel</div>
+    </div>
+    <div class="bg-blue-50 rounded-lg p-4 shadow text-center">
+      <div class="text-sm text-blue-800 font-semibold">Durchschnitt</div>
+      <div class="text-2xl font-bold text-blue-900">${avg}</div>
+      <div class="text-sm mt-1">${kniffelAvg} Kniffel/Spiel</div>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-4 shadow text-center">
+      <div class="text-sm text-gray-700 font-semibold">Spiele</div>
+      <div class="text-2xl font-bold text-gray-900">${filtered.length}</div>
+    </div>
+  `;
+
+  // Chart
+  const sorted = [...filtered].map(r=>({...r,__date:parseDateDMY(r.Datum)})).filter(r=>r.__date).sort((a,b)=>a.__date-b.__date);
+  if (chartInstance) chartInstance.destroy();
+  chartInstance = new Chart(ctx,{
+    type:"line",
+    data:{
+      labels:sorted.map(r=>r.Datum),
+      datasets:[
+        {label:"Punkte",data:sorted.map(r=>r.Punkte),borderColor:"#0f766e",backgroundColor:"rgba(15,118,110,0.1)",yAxisID:"y",tension:0.25},
+        {label:"Kniffel",data:sorted.map(r=>r.Kniffel),borderColor:"#f97316",backgroundColor:"rgba(249,115,22,0.1)",yAxisID:"y1",tension:0.25}
+      ]
+    },
+    options:{
+      responsive:true,
+      interaction:{mode:"nearest",intersect:false},
+      plugins:{tooltip:{callbacks:{label:(ctx)=>`${ctx.dataset.label}: ${ctx.parsed.y}`}}},
+      scales:{
+        y:{min:0,max:500,title:{display:true,text:"Punkte"}},
+        y1:{min:0,max:6,position:"right",title:{display:true,text:"Kniffel"},grid:{drawOnChartArea:false}}
+      }
+    }
+  });
+}
+
+function updateFilters() {
+  // Jahr
+  const years = [...new Set(allData.map(d=>d.Datum.match(/(\d{4})/)?.[1]).filter(Boolean))].sort();
+  yearFilter.innerHTML = `<option value="all">Alle Jahre</option>` + years.map(y=>`<option value="${y}">${y}</option>`).join("");
+  const currentYear = new Date().getFullYear().toString();
+  yearFilter.value = years.includes(currentYear)?currentYear:"all";
+
+  // Namen
+  const names = [...new Set(allData.map(d=>d.Name))].sort();
+  nameFilter.innerHTML = `<option value="all">Alle Spieler</option>` + names.map(n=>`<option value="${n}">${n}</option>`).join("");
+}
+
+Papa.parse("./rekorde.csv",{
+  download:true,header:true,delimiter:";",skipEmptyLines:true,
+  complete:(results)=>{
+    allData = results.data.map(r=>({Datum:r.Datum,Name:r.Name,Punkte:parseInt(r.Punkte),Kniffel:parseInt(r.Kniffel)}));
+    updateFilters();
+    render();
+  },
+  error:(err)=>console.error("CSV load error:",err)
+});
+
+yearFilter.addEventListener("change",render);
+nameFilter.addEventListener("change",render);
+</script>
+</body>
+</html>
