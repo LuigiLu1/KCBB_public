@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kniffelclub Beider Basel </title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- PapaParse for CSV parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <style>
+        .bg-dark-green {
+            background-color: #1a3a1a;
+        }
+        .text-dark-green {
+            color: #1a3a1a;
+        }
+        .border-dark-green {
+            border-color: #1a3a1a;
+        }
+        .hover\:bg-light-green:hover {
+            background-color: #2d5a2d;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-dark-green text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="text-xl font-bold"> KCBB </span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded hover:bg-light-green font-medium">Home</a>
+                    <a href="wanderungen.html" class="px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                    <a href="statuten.html" class="px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                    <a href="rekorde.html" class="px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-2" id="mobile-menu">
+                <a href="index.html" class="block px-3 py-2 rounded hover:bg-light-green">Home</a>
+                <a href="wanderungen.html" class="block px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                <a href="statuten.html" class="block px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                <a href="rekorde.html" class="block px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+    <div class="bg-white rounded-lg shadow-md p-6 max-w-lg mx-auto">
+        
+      <form id="recordForm" class="space-y-4">
+        
+        <!-- Datum -->
+        <div>
+          <label class="block font-medium text-gray-700">Datum</label>
+          <input type="date" id="datum" class="w-full border p-2 rounded" required>
+        </div>
+
+        <!-- Name -->
+        <div>
+          <label class="block font-medium text-gray-700">Name</label>
+          <input type="text" id="name" class="w-full border p-2 rounded" placeholder="Spielername" required>
+        </div>
+
+        <!-- Punkte -->
+        <div>
+          <label class="block font-medium text-gray-700">Punkte</label>
+          <input type="number" id="punkte" class="w-full border p-2 rounded" min="0" required>
+        </div>
+
+        <!-- Kniffel -->
+        <div>
+          <label class="block font-medium text-gray-700">Kniffel</label>
+          <input type="number" id="kniffel" class="w-full border p-2 rounded" min="0" required>
+        </div>
+
+        <hr class="my-6">
+
+        <!-- GitHub Token -->
+        <div>
+          <label class="block font-medium text-gray-700">Passwort</label>
+          <input type="password" id="token" class="w-full border p-2 rounded" placeholder="Passwort" required>
+          <p class="text-xs text-gray-500 mt-1">⚠️ Wird nur für diesen Upload genutzt und nicht gespeichert.</p>
+        </div>
+
+
+        <!-- Upload Button -->
+<button type="submit" class="w-full bg-dark-green text-white font-bold py-3 px-6 rounded hover:bg-green-800">
+  Upload
+</button>
+
+<p id="status" class="mt-4 text-center text-sm"></p>
+
+<!-- Zurück zu den Rekorden Button -->
+<a href="rekorde.html" class="w-full block bg-dark-green border-2 border-white py-3 px-6 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition text-center mt-4">
+  Zurück zu den Rekorden
+</a>
+    </div>
+
+
+  </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-green text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold">Kniffelclub beider Basel</span>
+                    </div>
+                    <p class="text-sm mt-2"> Tradition seit 2022</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i data-feather="mail" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center md:text-left">
+                <p> Kniffelclub beider Basel <script>document.write(/\d{4}/.exec(Date())[0])</script>. Alle Rechte vorbehalten. Sitz: 4056 Basel.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script>
+    const form = document.getElementById("recordForm");
+    const statusEl = document.getElementById("status");
+
+    // Repo Infos anpassen
+    const owner = "LuigiLu1";
+    const repo = "KCBB_private"; // "KCBB_public";
+    const path = "rekorde.csv";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const datumInput = document.getElementById("datum").value.trim(); // z.B. "2025-10-04"
+      const [year, month, day] = datumInput.split("-");
+      const datum = `${day}.${month}.${year}`; // z.B. "04.10.2025"
+
+      const name = document.getElementById("name").value.trim();
+      const punkte = document.getElementById("punkte").value.trim();
+      const kniffel = document.getElementById("kniffel").value.trim();
+      const token = document.getElementById("token").value.trim();
+
+      if (!datum || !name || !punkte || !kniffel) {
+        statusEl.textContent = "❌ Bitte alle Felder ausfüllen.";
+        statusEl.className = "mt-4 text-center text-red-600";
+        return;
+      }
+
+      if (!token) {
+        statusEl.textContent = "❌ Passwort fehlt.";
+        statusEl.className = "mt-4 text-center text-red-600";
+        return;
+      }
+
+      try {
+        statusEl.textContent = "⏳ Lade aktuelle CSV...";
+        statusEl.className = "mt-4 text-center text-gray-600";
+
+        // 1. Aktuelle Datei holen
+        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+          headers: { Authorization: `token ${token}` }
+        });
+        if (!res.ok) throw new Error("CSV konnte nicht geladen werden");
+        const fileData = await res.json();
+
+        const sha = fileData.sha; // zum Update nötig
+        const content = atob(fileData.content.replace(/\n/g, ""));
+        let newContent = content.trim();
+        if (!newContent.endsWith("\n")) newContent += "\n";
+        newContent += `${datum};${name};${punkte};${kniffel}\n`;
+
+        // 2. Datei zurückschreiben
+        const updateRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Neue Aufzeichnung: ${name}, ${punkte} Punkte`,
+            content: btoa(unescape(encodeURIComponent(newContent))),
+            sha: sha
+          })
+        });
+
+        if (!updateRes.ok) throw new Error("Upload fehlgeschlagen");
+
+        statusEl.textContent = "✅ Rekord erfolgreich hochgeladen!";
+        statusEl.className = "mt-4 text-center text-green-600";
+        form.reset();
+
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = "❌ Fehler: " + err.message;
+        statusEl.className = "mt-4 text-center text-red-600";
+      }
+    });
+  </script>
+
+</body>
+</html>

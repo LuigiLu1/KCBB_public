@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kniffelclub Beider Basel </title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .bg-dark-green {
+            background-color: #1a3a1a;
+        }
+        .text-dark-green {
+            color: #1a3a1a;
+        }
+        .border-dark-green {
+            border-color: #1a3a1a;
+        }
+        .hover\:bg-light-green:hover {
+            background-color: #2d5a2d;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-dark-green text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="text-xl font-bold"> KCBB - Kniffelclub beider Basel </span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded hover:bg-light-green font-medium">Home</a>
+                    <a href="wanderungen.html" class="px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                    <a href="statuten.html" class="px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                    <a href="rekorde.html" class="px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-2" id="mobile-menu">
+                <a href="index.html" class="block px-3 py-2 rounded hover:bg-light-green">Home</a>
+                <a href="wanderungen.html" class="block px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                <a href="statuten.html" class="block px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                <a href="rekorde.html" class="block px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-dark-green text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            
+            <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down">Wanderungen des Kniffelclubs beider Basel</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                 Entdecke unsere legendären Kniffel-Wanderungen durch die schöne Natur rund um die Schweiz und das Dreiländereck.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+        <a href="index.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Home
+    </a>
+                <a href="rekorde.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Rekorde
+    </a>
+
+    <a href="statuten.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Statuten
+    </a>
+</div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung01_klein.jpg" alt="Gründungswanderung 2022" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Gründungswanderung 2022</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">15.05.2022</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Ettingen, Basel-Landschaft</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Bei unserer ersten gemeinsamen Wanderung gab es neben der historischen Gründung des KCBBs inklusive Unterzeichnung der Statuten mit Feder und Tinte eine Grossbank zu besichtigen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung02_klein.jpg" alt="Kachelwanderung 2022" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Kachel-Wanderung</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">12.06.2022</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Passwang, Solothurn</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Die Wanderung in Passwang war ein Auf und Ab. Dank musikalischer Unterstützung in Form von niederländischen Klassikern meisterten wir auch diese Wanderung und belohten uns mit einer Runde Kniffel.
+                        </p>
+                    </div>
+                </div>
+                </div>
+        
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung03_klein.jpg" alt="Hüttenwanderung 2022" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Hüttenwanderung 2022</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">10.-11.09.2022</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Griesalp - Blüemlisalp - Kandersteg, Bern</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Bei der Wanderung im Berner Oberland hatten wir Glück in vielerlei Hinsicht: Zum einen blieb uns der furchterregende Blick nach unten beim steilen Aufstieg zur Blüemlisalp erspart, zum anderen durften wir bei strahlenden Sonnenschein unsere Ankunft am Oeschinensee mit einer gepflegten Partie Kniffel feiern.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung04_klein.png" alt="Hüttenwanderung 2022" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Schneewanderung 2023</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">12.02.2023</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Weissenstein, Solothurn</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Ein gelungener Start ins Wander- und Kniffeljahr 2023 führte uns über Schnee und Eis auf dem Solothurner Hausberg Weissenstein. @Peter: Wir erwarten noch immer sehnsüchtig deine 360-Grad-Aufnahmen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung05_klein.jpg" alt="GV 2023" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Generalversammlungs-Wanderung 2023</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">29.05.2023</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Lörrach, Baden Württemberg</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Auf dem Weg in Richtung Burgruine Rötteln war der Hunger und Durst grösser als die Ambition zum Wander. Das Rresultat war eine kurze aber sehr schöne Wanderung nach Lörrach, die in der Aufnahme weiterer Vereinsmitglieder ihren festlichen Gipfel fand.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung07_klein.jpg" alt="GV 2024" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Generalversammlungs-Wanderung 2024</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">14.04.2024</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Gelterkinden, Basel-Landschaft</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Angeführt von einem local Guide wurden wir durch das Basel-Landschaftliche Hinterland bis an den Fusse des Giessenfalls geführt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung06_klein.jpg" alt="Hüttenwanderung 2024" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Hüttenwanderung 2024</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">29.-30.09.2024</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Etzlihütte, Uri</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Nach einigen hitzigen Partien Kniffel kühlten wir uns auf über 2'000 Metern im mit Holz beheizten Badebottich und einem Kir Royal ab.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung08_klein.jpg" alt="Hüttenwanderung 2022" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Hüttenwanderung 2025</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">11.-12.04.2025</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Leukerbad, Wallis - Kandersteg, Bern </span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            International war nicht nur unsere Schneewanderung auf dem Gemmipass über eine Kantonsgrenze sondern auch unsere Begleitung von zwei niederländischen Nachwuchsknifflern. Prost.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+                       <div class="mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/img/Wanderung09_klein.jpg" alt="Hüttenwanderung 2024" class="w-full h-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-dark-green">Hüttenwanderung 2025</h2>
+                            <span class="bg-dark-green text-white px-3 py-1 rounded-full text-sm">06.-07.09.2025</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Curaglia, Graubünden - Fuorns, Graubünden</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Ein sehr steiler Aufstieg über 1'000 Höhenmeter wurde von friedlich grasenden Schafen und scheuen Murmeltieren überwacht und mit einem wunderschönen Sonnenaufgang im Bergpanorama belohnt. Danke an dieser Stelle für die Hafermilch.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+           </div> 
+        </div>
+
+            </div>
+
+           </div> 
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-green text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold">Kniffelclub beider Basel</span>
+                    </div>
+                    <p class="text-sm mt-2"> Tradition seit 2022</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center md:text-left">
+                <p> Kniffelclub beider Basel <script>document.write(/\d{4}/.exec(Date())[0])</script>. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+</body>
+</html>
