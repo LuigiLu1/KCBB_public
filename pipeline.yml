@@ -1,0 +1,26 @@
+# run the pipeline on changes in master branch
+trigger:
+  - main
+# build environment - OS
+pool:
+  vmImage: 'ubuntu-latest'
+  steps:
+  # build environment - Node
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'install node.js'  # NPM task
+  - script: |
+      # remove git history and settings - to avoid inheritance
+      rm -rf .git
+      # re-initialise git
+      git init
+      git config user.name "Lukas Rech"
+      git config user.email "lulangding@gmail.com"
+      git remote set-url origin https://LuigiLu1:${GIT_TOKEN}@github.com/LuigiLu1/KCBB_public.git
+      # add and commit /docs/ folder
+      git add .
+      git commit -m "deploy the bundle Azure_Pipe"
+      # push the commit to the public repository
+      git push origin HEAD:main --force
+    displayName: 'deploy the production bundle'
