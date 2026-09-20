@@ -1,0 +1,32 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+
+- script: |
+    # remove git history and settings - to avoid inheritance
+    rm -rf .git
+    # re-initialise git
+    git init
+    git config user.name "Lukas Rech"
+    git config user.email "lulangding@gmail.com"
+    git remote add origin "https://LuigiLu1:$(GIT_TOKEN)@github.com/LuigiLu1/KCBB_public"
+    # add and commit /docs/ folder
+    git add .
+    git commit -m "deploy the bundle Azure"
+    # push the commit to the public repository
+    git push origin HEAD:master --force
+  displayName: 'deploy the production bundle'

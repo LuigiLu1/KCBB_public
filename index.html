@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kniffelclub Beider Basel </title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .bg-dark-green {
+            background-color: #1a3a1a;
+        }
+        .text-dark-green {
+            color: #1a3a1a;
+        }
+        .border-dark-green {
+            border-color: #1a3a1a;
+        }
+        .hover\:bg-light-green:hover {
+            background-color: #2d5a2d;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-dark-green text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="text-xl font-bold"> KCBB </span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded hover:bg-light-green font-medium">Home</a>
+                    <a href="wanderungen.html" class="px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                    <a href="statuten.html" class="px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                    <a href="rekorde.html" class="px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-2" id="mobile-menu">
+                <a href="index.html" class="block px-3 py-2 rounded hover:bg-light-green">Home</a>
+                <a href="wanderungen.html" class="block px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                <a href="statuten.html" class="block px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                <a href="rekorde.html" class="block px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-dark-green text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <img 
+  class="mx-auto mb-8 w-1/2 max-w-[500px] h-auto" 
+  src="assets/img/portfolio/logo_quer.png" 
+  alt="Logo" 
+/>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-relaxed" data-aos="fade-down">
+  Willkommen beim <br> Kniffelclub beider Basel
+</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Tradition seit 2022
+            </p>
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+    <a href="rekorde.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Rekorde
+    </a>
+    <a href="wanderungen.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Wanderungen
+    </a>
+    <a href="statuten.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Statuten
+    </a>
+</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-dark-green mb-8 text-center">Über unseren Club</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="statuten.html" class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+                    <div class="text-dark-green mb-4">
+                        <i data-feather="users" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gemeinschaft</h3>
+                    <p class="text-gray-700">Wir sind eine Gruppe von Kniffel-Begeisterten, die sich regelmässig treffen, um gemeinsam zu spielen und Spass zu haben.</p>
+                </a>
+                <a href="rekorde.html"  class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-dark-green mb-4">
+                        <i data-feather="award" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tradition</h3>
+                    <p class="text-gray-700">Seit vielen Jahren pflegen wir die Tradition des Kniffelspiels in der Region Basel. Es ist geplant, eine Stadtmeisterschaft im Jahr <script>document.write(/\d{4}/.exec(Date())[0])</script> zu veranstalten. Check auch unsere Rekorde aus. </p>
+                </a>
+            <a href="wanderungen.html" class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-dark-green mb-4">
+                        <i data-feather="map" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Wanderungen</h3>
+                    <p class="text-gray-700">Neben dem Spielen erkunden wir gemeinsam die schöne Natur rund um die Schweiz und das Dreiländereck bei unseren legendären Kniffel-Wanderungen.</p>
+            </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-green text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold">Kniffelclub beider Basel</span>
+                    </div>
+                    <p class="text-sm mt-2"> Tradition seit 2022</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center md:text-left">
+                <p> Kniffelclub beider Basel <script>document.write(/\d{4}/.exec(Date())[0])</script>. Alle Rechte vorbehalten. Sitz: 4056 Basel.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kniffelclub Beider Basel </title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .bg-dark-green {
+            background-color: #1a3a1a;
+        }
+        .text-dark-green {
+            color: #1a3a1a;
+        }
+        .border-dark-green {
+            border-color: #1a3a1a;
+        }
+        .hover\:bg-light-green:hover {
+            background-color: #2d5a2d;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-dark-green text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="text-xl font-bold"> KCBB - Kniffelclub beider Basel </span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded hover:bg-light-green font-medium">Home</a>
+                    <a href="wanderungen.html" class="px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                    <a href="statuten.html" class="px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                    <a href="rekorde.html" class="px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-2" id="mobile-menu">
+                <a href="index.html" class="block px-3 py-2 rounded hover:bg-light-green">Home</a>
+                <a href="wanderungen.html" class="block px-3 py-2 rounded hover:bg-light-green">Wanderungen</a>
+                <a href="statuten.html" class="block px-3 py-2 rounded hover:bg-light-green">Statuten</a>
+                <a href="rekorde.html" class="block px-3 py-2 rounded hover:bg-light-green">Rekorde</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-dark-green text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+           
+            <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down">Statuten des Kniffelclubs beider Basel</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Stand: 17.11.2024
+            </p>
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+        <a href="index.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Home
+    </a>
+                <a href="rekorde.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Rekorde
+    </a>
+    <a href="wanderungen.html" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold text-white hover:bg-white hover:text-dark-green transition">
+        Wanderungen
+    </a>
+</div>
+        </div>
+    </header>
+
+<!-- Main Content --><main class="container mx-auto px-4 py-12">
+  <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 text-gray-800 leading-relaxed">
+    
+    <h2 class="text-2xl font-bold text-dark-green mb-4">1. Name und Sitz</h2>
+    <p>
+      Unter dem Namen „Kniffel Club Beider Basel“ (nachfolgend als KCBB bezeichnet) besteht ein Verein im Sinne von 
+      Art. 60 ff. ZGB mit Sitz in Basel. Er ist politisch und konfessionell unabhängig.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">2. Ziel und Zweck</h2>
+    <p>
+      Der Verein bezweckt eine Gemeinschaft zum regelmässigen Kniffeln und Austauschen.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">3. Mittel</h2>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Vereinsbeiträge</li>
+      <li>Erträge aus eigenen Veranstaltungen</li>
+      <li>Subventionen</li>
+      <li>Erträge aus Leistungsvereinbarungen</li>
+      <li>Spenden und Zuwendungen aller Art</li>
+    </ul>
+    <p>
+      Die Vereinsbeiträge werden jährlich durch die Mitgliederversammlung festgesetzt. Ehrenmitglieder sind vom Beitrag befreit.<br>
+      Das Geschäftsjahr entspricht dem Kalenderjahr.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">4. Mitgliedschaft</h2>
+    <p>
+      Mitglieder können natürliche und juristische Personen werden, die den Vereinszweck unterstützen.
+    </p>
+    <p>
+      Aktivmitglieder mit Stimmrecht sind natürliche Personen, welche die Angebote und Einrichtungen des Vereins nutzen.
+    </p>
+    <p>
+      Passivmitglieder ohne Stimmrecht können juristische Personen sein, welche den Verein ideell und finanziell unterstützen.
+    </p>
+    <p>
+      Personen, die sich in besonderem Masse für den Verein eingesetzt haben, kann auf Vorschlag des Vorstands durch die 
+      Mitgliederversammlung die Ehrenmitgliedschaft verliehen werden.
+    </p>
+    <p>
+      Aufnahmegesuche sind an den Vorstand zu richten; über die Aufnahme entscheidet der Vorstand. Für eine Aufnahme ist eine absolute Mehrheit des Vorstandes notwendig.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">5. Erlöschen der Mitgliedschaft</h2>
+    <ul class="list-disc list-inside space-y-1">
+      <li>bei natürlichen Personen durch Austritt, Ausschluss oder Tod.</li>
+      <li>bei juristischen Personen durch Austritt, Ausschluss oder Auflösung der juristischen Person.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">6. Austritt und Ausschluss</h2>
+    <p>
+      Ein Vereinsaustritt ist jeweils per Ende Monat möglich. Das Austrittsschreiben muss mindestens 7 Tage vor der ordentlichen Mitgliederversammlung schriftlich an den Vorstand gerichtet werden. Für das angebrochene Jahr ist der volle Vereinsbeitrag zu bezahlen.
+    </p>
+    <p>
+      Ein Mitglied kann jederzeit wegen Verletzung der Statuten oder Verstössen gegen die Ziele des Vereins aus dem Verein ausgeschlossen werden.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">7. Organe des Vereins</h2>
+    <ul class="list-disc list-inside space-y-1">
+      <li>die Mitgliederversammlung</li>
+      <li>der Vorstand</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">8. Die Mitgliederversammlung</h2>
+    <p>
+      Das oberste Organ des Vereins ist die Mitgliederversammlung. Eine ordentliche Mitgliederversammlung findet jährlich bei der ersten KCBB-Wanderung des Kalenderjahres statt.
+    </p>
+    <p>
+      Zur Mitgliederversammlung werden die Mitglieder 10 Tage im Voraus schriftlich eingeladen. Einladungen per E-Mail und Whatsapp sind gültig.
+    </p>
+    <p>
+      Anträge zuhanden der Mitgliederversammlung sind bis spätestens 20 Tage vor der Mitgliederversammlung schriftlich an den Vorstand zu richten.
+    </p>
+    <p>
+      Der Vorstand oder 1/5 der Mitglieder können jederzeit die Einberufung einer ausserordentlichen Mitgliederversammlung unter Angaben des Zwecks verlangen. Die Versammlung hat spätestens 3 Wochen nach Eingang des Begehrens zu erfolgen.
+    </p>
+    <p>
+      Die Mitgliederversammlung ist das oberste Organ des Vereins. Sie hat die folgenden unentziehbaren Aufgaben und Kompetenzen:
+    </p>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Genehmigung des Protokolls der letzten Mitgliederversammlung</li>
+      <li>Genehmigung des Jahresberichts des Vorstands</li>
+      <li>Entgegennahme des Revisionsberichts und Genehmigung der Jahresrechnung</li>
+      <li>Entlastung des Vorstandes</li>
+      <li>Wahl des Präsidenten/der Präsidentin und des übrigen Vorstandes sowie der Kontrollstelle</li>
+      <li>Festsetzung der Vereinsbeiträge</li>
+      <li>Kenntnisnahme des Jahresbudgets</li>
+      <li>Kenntnisnahme über das Tätigkeitsprogramm</li>
+      <li>Beschlussfassung über Anträge des Vorstands und der Mitglieder</li>
+      <li>Änderung der Statuten</li>
+      <li>Entscheid über Ausschlüsse von Mitgliedern</li>
+      <li>Beschlussfassung über die Auflösung des Vereins und die Verwendung des Liquidationserlöses</li>
+    </ul>
+    <p>
+      Jede ordnungsgemäss einberufene Mitgliederversammlung ist unabhängig von der Anzahl der anwesenden Mitglieder beschlussfähig.<br>
+      Die Mitglieder fassen die Beschlüsse mit dem absolutem Mehr. (Absolutes Mehr: Eine Stimme mehr als die Hälfte der gültigen Stimmen.)<br>
+      Statutenänderungen benötigen die Zustimmung einer 2/3–Mehrheit der Stimmberechtigten.<br>
+      Über die gefassten Beschlüsse ist zumindest ein Beschlussprotokoll abzufassen.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">9. Der Vorstand</h2>
+    <p>
+      Der Vorstand besteht aus mindestens drei Personen. Die Amtszeit beträgt ein Jahr. Wiederwahl ist möglich.
+    </p>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Der Vorstand führt die laufenden Geschäfte und vertritt den Verein nach aussen.</li>
+      <li>Er erlässt Reglemente.</li>
+      <li>Er kann Arbeitsgruppen (Fachgruppen) einsetzen.</li>
+      <li>Er kann für die Erreichung der Vereinsziele Personen gegen eine angemessene Entschädigung anstellen oder beauftragen.</li>
+    </ul>
+    <p>Im Vorstand sind folgende Ressorts vertreten:</p>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Präsidium, 2023: L. Rech</li>
+      <li>Vizepräsidium, 2023: J. Balz</li>
+      <li>Finanzen, 2023: J. Balz</li>
+      <li>Aktuariat, 2023: J. Feld</li>
+    </ul>
+    <p>
+      Ämterkumulation ist möglich.<br>
+      Der Vorstand versammelt sich, sooft es die Geschäfte verlangen. Jedes Vorstandsmitglied kann unter Angabe der Gründe die Einberufung einer Sitzung verlangen.<br>
+      Sofern kein Vorstandsmitglied mündliche Beratung verlangt, ist die Beschlussfassung auf dem Zirkularweg (auch E-Mail und Kurznachrichten) gültig.<br>
+      Der Vorstand ist grundsätzlich ehrenamtlich tätig. Durch Beschluss der Mitgliederversammlung kann eine Vergütung der effektiven Spesen veranlasst werden.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">10. Die Revisionsstelle</h2>
+    <p>
+      Die Mitgliederversammlung wählt ein*e Rechnungsrevisor*in oder eine juristische Person, welche die Buchführung kontrolliert und mindestens einmal jährlich eine Stichkontrolle durchführt.
+    </p>
+    <p>
+      Die Revisionsstelle erstattet dem Vorstand zuhanden der Mitgliederversammlung Bericht und Antrag.<br>
+      Die Amtszeit beträgt ein Jahr. Wiederwahl ist möglich.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">11. Zeichnungsberechtigung</h2>
+    <p>
+      Der Verein wird verpflichtet durch die Kollektivunterschrift des*der Präsident*in zusammen mit einem weiteren Mitglied des Vorstandes.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">12. Haftung</h2>
+    <p>
+      Für die Schulden des Vereins haftet nur das Vereinsvermögen. Eine persönliche Haftung der Mitglieder ist ausgeschlossen.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">13. Auflösung des Vereins</h2>
+    <p>
+      Die Auflösung des Vereins kann durch Beschluss einer zu diesem Zweck einberufenen Mitgliederversammlung mit einem Stimmenmehr von 3/4 der Mitglieder beschlossen werden, wenn mindestens 3/4 der Mitglieder daran teilnehmen.
+    </p>
+    <p>
+      Nehmen weniger als 3/4 aller Mitglieder an der Versammlung teil, ist innerhalb eines Monats eine zweite Versammlung abzuhalten. An dieser Versammlung kann der Verein auch dann mit einfacher Mehrheit aufgelöst werden, wenn weniger als 3/4 der Mitglieder anwesend sind.
+    </p>
+    <p>
+      Bei einer Auflösung des Vereins fällt das Vereinsvermögen an eine steuerbefreite Organisation welche den gleichen, einen ähnlichen oder gemeinnützigen Zweck verfolgt. Die Verteilung des Vereinsvermögens unter den Mitgliedern ist ausgeschlossen.
+    </p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">14. Gründungsmitglieder</h2>
+    <p>Nachfolgend sind die Gründungsmitglieder explizit erwähnt:</p>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Julian Balz (G)</li>
+      <li>Julia Feld (G)</li>
+      <li>Julia Gros (G)</li>
+      <li>Michelle Kretzschmar (G)</li>
+      <li>Lukas Rech (G)</li>
+      <li>Thom van Rijn (G)</li>
+      <li>Peter Michailow</li>
+    </ul>
+    <p>(G) bezeichnet Gründungsmitglieder</p>
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">15. Inkrafttreten</h2>
+    <p>
+      Diese Statuten wurden an der Gründungsversammlung vom 15.05.2022 angenommen und sind mit diesem Datum in Kraft getreten.
+    </p>
+
+    <p> </p>
+    
+
+    <h2 class="text-2xl font-bold text-dark-green mt-8 mb-4">PDF-Datei</h2>
+        <body>
+            <p>Download als <a href="assets/Kniffel Club Beider Basel – Statuten.pdf">PDF-Datei</a>.</p>
+        </body>
+
+  </div>
+</main>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark-green text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold">Kniffelclub beider Basel</span>
+                    </div>
+                    <p class="text-sm mt-2"> Tradition seit 2022</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-sm text-center md:text-left">
+                <p> Kniffelclub beider Basel <script>document.write(/\d{4}/.exec(Date())[0])</script>. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+</body>
+</html>
